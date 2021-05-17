@@ -1,0 +1,64 @@
+
+<!DOCTYPE html><html lang="es" dir="ltr"><head><meta charset="utf-8"><title></title><link href="styles.css" type="text/css" rel="stylesheet" media="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.min.js"></script><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"></head><body style="border:0px;" onresize="resizer()"><style>*::-moz-selection { background: none; }
+*::selection { background: none; }
+td{
+  vertical-align: top;
+}
+#barradepausa{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top:-100px;
+  position:fixed;
+  background:#841f1f;
+  min-width:96%;
+  height:100px;
+
+  -webkit-box-shadow: 4px 4px 0px 0px rgba(58, 56, 50,1);
+  -moz-box-shadow: 4px 4px 0px 0px rgba(58, 56, 50,1);
+  box-shadow: 4px 4px 0px 0px rgba(58, 56, 50,1);
+}
+#pausatext{
+  margin:10px;
+  vertical-align: middle;
+  text-align:center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 65px;
+}
+.button {
+  .no_selection {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
+  }
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 3px;
+  min-width: 20px;
+  height: 33px;
+  padding: 7px;
+  border: none;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #3498db;
+  cursor: pointer;
+  font-size: 28px;
+
+  -webkit-box-shadow: 4px 4px 0px 0px rgba(42,39,32,1);
+  -moz-box-shadow: 4px 4px 0px 0px rgba(42,39,32,1);
+  box-shadow: 4px 4px 0px 0px rgba(42,39,32,1);
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+}
+.interface{
+  position: fixed;
+}
+</style><div id="interface" class="interface"><table style="border:0px; margin:0px;"><tr><td><div style="height: 4px;"></div><div style="background: #4C453F; width:180px;" onclick="play1p()" class="button">Jugar solo</div><div style="height: 4px;"></div><div style="background: #4C453F; width:180px;" onclick="play2p()" class="button">De a dos</div></td><td style="width:100%;"><div style="height: 8px;"></div><div><p>Juegas con las flechas del teclado</p></div><div style="height: 41px;"></div><div><p>El jugador 1 juega con las flechas del teclado y el jugador 2 con WASD</p></div><div style="height: 4px; font-size: 30px; text-align:right;"><p id="puntajes"> </p></div></td><td><div style="height: 4px;"></div><div id="botonpausa" style="background: #4C453F; width:170px;" onclick="autopauser();" class="button no_selection">Pausar</div><div style="height: 4px;"></div><div style="background: #4C453F; width:170px;" onclick="//resetear_puntaje()" class="button">Men&#65533;</div></td></tr></table><div style="height: 4px;"></div></div><canvas id="game" width="1000px" height="500px; z-index:-1;"></canvas><div id="barradepausa" style="display:none;"><div id="pausatext"></div></div><script>var canvas = document.getElementById('game')
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+</script><script src="canvas.js"></script><script src="buttons.js"></script><script src="game.js"></script><script>resizer()</script></body></html>
